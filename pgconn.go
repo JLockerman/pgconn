@@ -6,6 +6,7 @@ import (
 	"crypto/tls"
 	"encoding/binary"
 	"encoding/hex"
+	"fmt"
 	"io"
 	"math"
 	"net"
@@ -1582,4 +1583,8 @@ func Construct(hc *HijackedConn) (*PgConn, error) {
 	)
 
 	return pgConn, nil
+}
+
+func init() {
+	fmt.Println("using patched pgconn")
 }
